@@ -53,6 +53,8 @@
         let computerScore = 0
         const rounds = 5
         let finishedRound = 0
+        let draw = 0
+        let realRounds = 0
 
         while(finishedRound < rounds){
             playerSelection = prompt("It's your turn! Rock Paper or Scissors?")
@@ -65,18 +67,24 @@
                 computerScore++
                 finishedRound++
             }
+            else{
+                draw ++
+            }
             console.log(result)
             console.log("Remaining rounds: " + (rounds - finishedRound))
         }
 
+        //The latter part of the final message
+        score = "Your Socre\n" + "Win: " + playerScore + "    Lose: "  + (rounds - playerScore) +  "    Draw: " + draw + "    Rounds: " + (rounds + draw)
+
         if(playerScore > computerScore){
-            console.log("You Win!\nSocre: " + playerScore + " " + "rounds out of " + rounds)
+            console.log("You Win!\n\n" + score)
         }
         else if(playerScore < computerScore){
-            console.log("You Lost!\nScore: " + playerScore + " " + "rounds out of " + rounds)
+            console.log("You Lost!\n\n" + score)
         }
         else{
-            console.log("It's a Draw!\nScore: " + playerScore + " " + "rounds out of " + rounds)
+            console.log("It's a Draw!\n\n" + score)
         }
     }
 
