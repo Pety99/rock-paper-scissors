@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<script>
+    /**
+     * Tis function randomly generates either Rock Paper or Scissors
+     */
+    function computerPlay(){
+        let num = Math.floor(Math.random()*3)
+        if(num == 0){
+            return "Rock"
+        }
+        else if( num == 1){
+            return "Paper"
+        }
+        else{
+            return "Scissors"
+        }
+    }
+
+    function fistUpper(str){
+        return (str.charAt(0).toUpperCase() + str.substr(1).toLowerCase())
+    }
+
+    function playRound(playerSelection, computerSelection){
+        player = fistUpper(playerSelection)
+        if(player == computerSelection){
+            return "It's a draw! You both chose" + " " + player
+        }
+        else if(player == "Rock" && computerSelection == "Scissors"){
+            return "You Win! Rock beats Scissors"
+        }
+        else if(player == "Rock" && computerSelection == "Paper"){
+            return "You Lose! Paper beats Rock"
+        }
+        else if(player == "Paper" && computerSelection == "Scissors"){
+            return "You Lose! Scissors beats Paper"
+        }
+        else if(player == "Paper" && computerSelection == "Rock"){
+            return "You Win! Paper beats Rock"
+        }
+        else if(player == "Scissors" && computerSelection == "Rock"){
+            return "You Lose! Rock beats Scissors"
+        }
+        else if(player == "Scissors" && computerSelection == "Paper"){
+            return "You Win! Scissors beats Paper"
+        }
+        else{
+            return "Your input is not correct.. Try \"Rock\" \"Paper\" or \"Scissors\""
+        }
+    }
+
+    function game(){
+        let playerScore = 0
+        let computerScore = 0
+        const rounds = 5
+        let finishedRound = 0
+
+        while(finishedRound < rounds){
+            playerSelection = prompt("It's your turn! Rock Paper or Scissors?")
+            result = playRound(playerSelection, computerPlay())
+            if(result.includes("You Win")){
+                playerScore ++
+                finishedRound ++
+            }
+            else if(result.includes("You Lose")){
+                computerScore++
+                finishedRound++
+            }
+            console.log(result)
+            console.log("Remaining rounds: " + (rounds - finishedRound))
+        }
+
+        if(playerScore > computerScore){
+            console.log("You Win!\nSocre: " + playerScore + " " + "rounds out of " + rounds)
+        }
+        else if(playerScore < computerScore){
+            console.log("You Lost!\nScore: " + playerScore + " " + "rounds out of " + rounds)
+        }
+        else{
+            console.log("It's a Draw!\nScore: " + playerScore + " " + "rounds out of " + rounds)
+        }
+    }
+
+    game()
+
+</script>
