@@ -2,37 +2,40 @@ body{
     text-align: center;
     background-color :#f7f9fa;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 300;
-    margin: 0 20% 0 20%;
+    font-weight: 400;
+    margin: 2em 20% 0 20%;
+    border: 3px solid rgba(32,33,36,0.7);
+    border-radius: 10px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 760px) {
     body{
-        margin: 0 0 0 0;
+        margin: 2em 0 0 0;
+        border-left: none;
+        border-right:none;
+        padding-right: 0px;
+        padding-left: 0px;
+        border-radius : 0;
     }
 }
 
 h1{
     background-color: #f7f9fa;
-    font-weight: 400;
+    font-weight: 500;
 }
 
-.buttons{
-    background-color: rgba(32,33,36,0.7);
-}
-
-.button{
+button{
     border-radius: 50%;
     width: 7em;
     height: 7em;
-    margin: 1em;
+    margin: 2em 1em 2em 1em;
     border:none;
-    box-shadow: 10px 10px 49px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 49px -8px rgba(0,0,0,0.6);
     background-color: #f7f9fa;
     outline: none;
 }
 
-.button:active{
+button:active{
     background-color: #f7f9fa;
 }
 
@@ -64,9 +67,62 @@ button:hover .cls-3{
     fill: #9ba9a6;
 }
 
+button:hover #reset-fill{
+    fill: red;
+}
+
+button:disabled{
+    background-color: gray;
+    opacity: 50%;
+}
+
+button:disabled:active{
+    background-color: gray;
+    opacity: 50%;
+}
+
+button:disabled:hover .cls-1{
+    fill: #CFC0BD;
+}
+
+button:disabled:hover .cls-2{
+    fill: #B8B8AA;
+}
+
+button:disabled:hover .cls-3{
+    fill: #7F9183;
+}
+
+#reset:active #reset-fill{
+    fill: black;
+}
+
 .svg{
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
+}
+
+#reset{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.score{
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#result{
+    font-size: 18px;
+    font-weight: 400;
+}
+#description{
+    font-size: 15.5px;
+}
+#final-result{
+    font-size: 20px;
 }
 
 
